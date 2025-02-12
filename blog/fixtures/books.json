@@ -1,0 +1,82 @@
+[
+    {
+        "model": "blog.book",
+        "pk": 1,
+        "fields": {
+            "title": "The Adventures of John",
+            "author": 1
+        }
+    },
+    {
+        "model": "blog.book",
+        "pk": 2,
+        "fields": {
+            "title": "Jane's Journey",
+            "author": 2
+        }
+    },
+    {
+        "model": "blog.book",
+        "pk": 3,
+        "fields": {
+            "title": "Alice in Wonderland",
+            "author": 3
+        }
+    },
+    {
+        "model": "blog.book",
+        "pk": 4,
+        "fields": {
+            "title": "Bob's Big Adventure",
+            "author": 4
+        }
+    },
+    {
+        "model": "blog.book",
+        "pk": 5,
+        "fields": {
+            "title": "Charlie's Challenges",
+            "author": 5
+        }
+    },
+    {
+        "model": "blog.book",
+        "pk": 6,
+        "fields": {
+            "title": "Diana's Diary",
+            "author": 6
+        }
+    },
+    {
+        "model": "blog.book",
+        "pk": 7,
+        "fields": {
+            "title": "Ethan's Expedition",
+            "author": 7
+        }
+    },
+    {
+        "model": "blog.book",
+        "pk": 8,
+        "fields": {
+            "title": "Fiona's Fantasy",
+            "author": 8
+        }
+    },
+    {
+        "model": "blog.book",
+        "pk": 9,
+        "fields": {
+            "title": "George's Galaxy",
+            "author": 9
+        }
+    },
+    {
+        "model": "blog.book",
+        "pk": 10,
+        "fields": {
+            "title": "Hannah's Horizon",
+            "author": 10
+        }
+    }
+]

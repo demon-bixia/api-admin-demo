@@ -43,4 +43,7 @@ ENV PYTHONUNBUFFERED=1
  
 # Switch to non-root user
 USER appuser
- 
+
+EXPOSE 8000
+
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "api_admin_demo.wsgi:application"]

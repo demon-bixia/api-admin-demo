@@ -46,8 +46,6 @@ INSTALLED_APPS = [
     'drf_spectacular',
     'rest_framework',
     'django_api_admin',
-    'django_celery_results',
-    'django_celery_beat'
 ]
 
 MIDDLEWARE = [
@@ -84,21 +82,12 @@ WSGI_APPLICATION = 'api_admin_demo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {}
-if DEBUG:
-    DATABASES['default'] = {
+DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
-else:
-    DATABASES['default'] = {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DATABASE_NAME'),
-        'USER': os.getenv('DATABASE_USER'),
-        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
-        'HOST': os.getenv('DATABASE_HOST'),
-        'PORT': os.getenv('DATABASE_PORT'),
-    }
+}
 
 
 # Password validation
@@ -148,10 +137,8 @@ REST_FRAMEWORK = {
 }
 
 
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost',  # jest-dom test server
-    'http://localhost:3000',  # react developement server
-)
+CORS_ORIGIN_WHITELIST = os.getenv(
+    "CORS_ORIGIN_WHITELIST", "http://localhost:8000").split(",")
 CORS_ALLOW_CREDENTIALS = True
 
 
@@ -161,7 +148,3 @@ SPECTACULAR_SETTINGS = {
         'django_api_admin.hooks.modify_schema'
     ]
 }
-
-CELERY_RESULT_BACKEND = 'django-db'
-CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
-CELERY_BROKER_URL = os.getenv('CELERY_BROKER_URL', "amqp://")

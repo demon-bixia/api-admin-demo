@@ -44,6 +44,8 @@ ENV PYTHONUNBUFFERED=1
 # Switch to non-root user
 USER appuser
 
+# expose port 8000 so we can bind it
 EXPOSE 8000
 
+# launch the server
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--workers", "3", "api_admin_demo.wsgi:application"]

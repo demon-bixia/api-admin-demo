@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.urls import path
 from django_api_admin.sites import site
+from blog.views import demo_user, load_fixtures, migrate
 
 urlpatterns = [
     path('admin/', site.urls),
+    path('management/fixtures/', load_fixtures),
+    path('management/migrate/', migrate),
+    path('management/demo-user/', demo_user),
 ]

@@ -16,18 +16,25 @@ Ensure you have the following installed on your machine:
    git checkout -b nocelery origin/nocelery
    ```
 
-2. **Build the Demo**
-   ```sh
-   docker build -t api-admin-node -f Dockerfile
-   ```
-   This will build the image.
-
-3. **Launch the demo**
+2. **Launch the demo**
      ```
-     docker run --name api-admin-demo --env-file .env -p 8000:8000 api-admin-demo
+     docker compose up --build
      ```
      This will create and run the container.
 
+3. **Migrate the database changes**
+
+     First run bash inside the running container
+     ```
+     docker exec -it <container-id> /bin/bash
+     ```
+     
+     Now run manage.py migrate
+     
+     ```
+     uv run manage.py migrate
+     ```
+     
 
 ## Configuration
 
@@ -37,7 +44,5 @@ Ensure you have the following installed on your machine:
   Password: password
   ```
 
-
 ## License
 This project is licensed under the MIT License.
-

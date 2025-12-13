@@ -25,7 +25,7 @@ class Command(BaseCommand):
                 name='load the demo data',
                 task='blog.tasks.load_fixtures',
             )
-            logger.info(f"Periodic tasks scheduled successfully")
+            logger.info("Periodic tasks scheduled successfully")
 
         except Exception as e:
             logger.error(
